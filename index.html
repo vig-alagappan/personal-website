@@ -1,52 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Links</title>
+  <title>Alternate 4×1 Layout</title>
   <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      /* Added the following lines to vertically center: */
-      display: flex; 
-      flex-direction: column; 
-      justify-content: center; 
-      align-items: center; 
-      min-height: 100vh; 
-      margin: 0; /* Remove default body margin */
-    }
-    ul {
-      list-style: none;
+    /* Reset to remove default margins/padding */
+    html, body {
+      margin: 0;
       padding: 0;
-      margin: 0 auto; /* center the list in some browsers */
+      height: 100%;
+      font-family: sans-serif;
     }
-    li {
-      margin: 2rem 0;
+
+    /* 
+      The container is a grid with 4 columns, each 1 fraction unit wide.
+      That means all 4 columns share the width equally. 
+    */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(1, 4fr); /* 4 columns */
+      height: 100vh;  /* full viewport height */
+      width: 100vw;   /* full viewport width */
     }
-    a {
-      display: inline-block;
-      width: 200px; /* same width for all buttons */
-      padding: 1rem;
-      background: #7a33ad; /* darker purple */
-      color: #fff; 
+
+    /* 
+      Each "cell" in the grid is an <a> link. 
+      We center the text in each cell using flexbox. 
+    */
+    .grid-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
       text-decoration: none;
-      border-radius: 6px;
+      color: #fff;
+      font-size: 1.5rem;
       font-weight: bold;
-      text-align: center;
       transition: background 0.3s;
     }
-    a:hover {
-      background: #682a95; /* slightly darker hover */
-    }
+
+    /* 
+      Seaborn default palette: 
+      [#4C72B0, #55A868, #C44E52, #8172B2]
+      We'll add a 4th color from the extended palette or reorder as needed.
+      Hover states are slightly darker. 
+    */
+    .blue   { background: #4C72B0; }
+    .blue:hover   { background: #4466a3; }
+
+    .green  { background: #55A868; }
+    .green:hover  { background: #4d975d; }
+
+    .red    { background: #C44E52; }
+    .red:hover    { background: #ad4649; }
+
+    .purple { background: #8172B2; }
+    .purple:hover { background: #7466a1; }
   </style>
 </head>
 <body>
-  <ul>
-    <li><a href="https://www.linkedin.com/in/vignesh-alagappan/" target="_blank">Resume</a></li>
-    <li><a href="https://github.com/vig-alagappan" target="_blank">Code</a></li>
-    <li><a href="https://substack.com" target="_blank">Essays</a></li>
-    <li><a href="https://medium.com/@vig.alagappan" target="_blank">Fiction</a></li>
-  </ul>
+  <div class="grid-container">
+    <!-- 4 columns in a single row -->
+    <a href="https://www.linkedin.com/in/vignesh-alagappan/" 
+       class="grid-item blue" 
+       target="_blank"> 
+       Resume
+    </a>
+    <a href="https://github.com/vig-alagappan" 
+       class="grid-item green" 
+       target="_blank"> 
+       Code
+    </a>
+    <a href="https://substack.com" 
+       class="grid-item red" 
+       target="_blank"> 
+       Essays
+    </a>
+    <a href="https://medium.com/@vig.alagappan" 
+       class="grid-item purple" 
+       target="_blank"> 
+       Fiction
+    </a>
+  </div>
 </body>
 </html>
