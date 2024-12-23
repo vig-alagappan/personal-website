@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Links</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      /* Added the following lines to vertically center: */
+      display: flex; 
+      flex-direction: column; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+      margin: 0; /* Remove default body margin */
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto; /* center the list in some browsers */
+    }
+    li {
+      margin: 2rem 0;
+    }
+    a {
+      display: inline-block;
+      width: 200px; /* same width for all buttons */
+      padding: 1rem;
+      background: #7a33ad; /* darker purple */
+      color: #fff; 
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    a:hover {
+      background: #682a95; /* slightly darker hover */
+    }
+  </style>
+</head>
+<body>
+  <ul>
+    <li><a href="https://www.linkedin.com/in/vignesh-alagappan/" target="_blank">Resume</a></li>
+    <li><a href="https://github.com/vig-alagappan" target="_blank">Code</a></li>
+    <li><a href="https://substack.com" target="_blank">Essays</a></li>
+    <li><a href="https://medium.com/@vig.alagappan" target="_blank">Fiction</a></li>
+  </ul>
+</body>
+</html>
