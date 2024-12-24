@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alternate 4×1 Layout</title>
+  <title>Vig Alagappan</title>
   <style>
     /* Reset to remove default margins/padding */
     html, body {
@@ -32,10 +32,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      text-transform: uppercase;
+      
       text-decoration: none;
       color: #fff;
-      font-size: 1.5rem;
+      font-size: 2.5rem;
       font-weight: bold;
       transition: background 0.3s;
     }
@@ -57,6 +57,18 @@
 
     .purple { background: #8172B2; }
     .purple:hover { background: #7466a1; }
+
+    @media (max-width: 768px) {
+  .grid-container {
+    grid-template-rows: repeat(4, auto); /* Adjust row heights dynamically */
+    height: auto; /* Allow the height to grow based on content */
+  }
+  .grid-item {
+    font-size: 1.8rem; /* Reduce font size for smaller screens */
+    padding: 15px; /* Add spacing for better touch targets */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -65,23 +77,22 @@
     <a href="https://www.linkedin.com/in/vignesh-alagappan/" 
        class="grid-item blue" 
        target="_blank"> 
-       Resume
+       Resume (LinkedIn)
     </a>
     <a href="https://github.com/vig-alagappan" 
        class="grid-item green" 
        target="_blank"> 
-       Code
+       Code (GitHub)
     </a>
     <a href="https://substack.com" 
        class="grid-item red" 
        target="_blank"> 
-       Essays
+       Essays (Substack)
     </a>
     <a href="https://medium.com/@vig.alagappan" 
        class="grid-item purple" 
        target="_blank"> 
-       Fiction
+       Fiction (Medium)
     </a>
   </div>
 </body>
-</html>
