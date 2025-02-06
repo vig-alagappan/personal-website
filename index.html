@@ -2,34 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vig Alagappan</title>
-  <style>
-    /* Reset to remove default margins/padding */
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: sans-serif;
-    }
-
-    /* 
-      The container is a grid with 4 columns, each 1 fraction unit wide.
-      That means all 4 columns share the width equally. 
-    */
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(1, 4fr); /* 4 columns */
-      height: 100vh;  /* full viewport height */
-      width: 100vw;   /* full viewport width */
-    }<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vig Alagappan</title>
   <style>
-    /* Reset styles */
+    /* Reset default margins/padding */
     html, body {
       margin: 0;
       padding: 0;
@@ -37,15 +13,16 @@
       font-family: sans-serif;
     }
 
-    /* Desktop grid: 4 equal columns */
+    /* Create a grid with 1 column and 4 rows */
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      height: 100vh;
-      width: 100vw;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(4, 1fr);
+      height: 100vh;  /* full viewport height */
+      width: 100vw;   /* full viewport width */
     }
 
-    /* Grid items styling */
+    /* Style for each grid item */
     .grid-item {
       display: flex;
       align-items: center;
@@ -57,7 +34,7 @@
       transition: background 0.3s;
     }
 
-    /* Color schemes and hover states */
+    /* Colors and hover effects */
     .blue   { background: #4C72B0; }
     .blue:hover   { background: #4466a3; }
 
@@ -72,14 +49,9 @@
 
     /* Mobile adjustments */
     @media (max-width: 768px) {
-      .grid-container {
-        grid-template-columns: 1fr; /* Stack items vertically */
-        grid-template-rows: repeat(4, auto);
-        height: auto; /* Allow height to adjust based on content */
-      }
       .grid-item {
-        font-size: 1.8rem; /* Slightly smaller text */
-        padding: 15px;     /* Extra padding for better touch targets */
+        font-size: 1.8rem;  /* Smaller font for mobile screens */
+        padding: 15px;      /* Additional padding for touch targets */
       }
     }
   </style>
@@ -101,77 +73,3 @@
   </div>
 </body>
 </html>
-
-
-    /* 
-      Each "cell" in the grid is an <a> link. 
-      We center the text in each cell using flexbox. 
-    */
-    .grid-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      
-      text-decoration: none;
-      color: #fff;
-      font-size: 2.5rem;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    /* 
-      Seaborn default palette: 
-      [#4C72B0, #55A868, #C44E52, #8172B2]
-      We'll add a 4th color from the extended palette or reorder as needed.
-      Hover states are slightly darker. 
-    */
-    .blue   { background: #4C72B0; }
-    .blue:hover   { background: #4466a3; }
-
-    .green  { background: #55A868; }
-    .green:hover  { background: #4d975d; }
-
-    .red    { background: #C44E52; }
-    .red:hover    { background: #ad4649; }
-
-    .purple { background: #8172B2; }
-    .purple:hover { background: #7466a1; }
-
-    @media (max-width: 768px) {
-  .grid-container {
-    grid-template-rows: repeat(4, auto); /* Adjust row heights dynamically */
-    height: auto; /* Allow the height to grow based on content */
-  }
-  .grid-item {
-    font-size: 1.8rem; /* Reduce font size for smaller screens */
-    padding: 15px; /* Add spacing for better touch targets */
-  }
-}
-
-  </style>
-</head>
-<body>
-  <div class="grid-container">
-    <!-- 4 columns in a single row -->
-    <a href="https://www.linkedin.com/in/vignesh-alagappan/" 
-       class="grid-item blue" 
-       target="_blank"> 
-       Resume (LinkedIn)
-    </a>
-    <a href="https://github.com/vig-alagappan" 
-       class="grid-item green" 
-       target="_blank"> 
-       Code (GitHub)
-    </a>
-    <a href="https://substack.com" 
-       class="grid-item red" 
-       target="_blank"> 
-       Essays (Substack)
-    </a>
-    <a href="https://medium.com/@vig.alagappan" 
-       class="grid-item purple" 
-       target="_blank"> 
-       Fiction (Medium)
-    </a>
-  </div>
-</body>
