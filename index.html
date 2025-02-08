@@ -4,8 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vig Alagappan</title>
+  <!-- Include Google Fonts for Open Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
   <!-- Include Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="description" content="Vig Alagappan - my links">
+  <meta property="og:title" content="Vig Alagappan">
+  <meta property="og:description" content="Vig Alagappan - my links">
+  <meta property="og:url" content="https://vigalagappan.com">
+  <meta name="twitter:card" content="summary_large_image">
   <style>
     /* Define CSS variables for theming */
     :root {
@@ -34,17 +42,38 @@
       transition: background 0.3s;
     }
 
+    /* Container for header and card */
+    .container {
+      text-align: center;
+    }
+
+    .intro {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300; /* This gives you the "light" appearance */
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--text-color);
+    }
+
+
     /* Card container styling */
     .card {
-      background: var(--card-bg);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-      padding: 20px;
-      width: 90%;
-      max-width: 400px;
-      transition: background 0.3s;
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  transition: background 0.3s;
     }
+
+/* Apply the blur effect only if supported */
+@supports (backdrop-filter: blur(10px)) {
+  .card {
+    backdrop-filter: blur(10px);
+    /* Optionally, you could adjust the background for better effect */
+  }
+    }
+
 
     /* Link styles */
     .card a {
@@ -86,22 +115,26 @@
   </style>
 </head>
 <body>
-  <div class="card">
-    <a href="https://www.linkedin.com/in/vignesh-alagappan/" target="_blank">
-      <i class="fa-solid fa-graduation-cap"></i>Resume (LinkedIn)
-    </a>
-    <a href="https://github.com/vig-alagappan" target="_blank">
-      <i class="fa-solid fa-robot"></i>Code (GitHub)
-    </a>
-    <a href="https://substack.com" target="_blank">
-      <i class="fas fa-pencil"></i>Essays (Substack)
-    </a>
-    <a href="https://medium.com/@vig.alagappan" target="_blank">
-      <i class="fa-solid fa-shoe-prints"></i>Fiction (Medium)
-    </a>
-    <!-- Dark mode toggle -->
-    <div class="toggle-container">
-      <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <div class="container">
+    <!-- Header text -->
+    <h1 class="intro">Hi, I'm Vig.</h1>
+    <div class="card">
+      <a href="https://www.linkedin.com/in/vignesh-alagappan/" target="_blank">
+        <i class="fa-solid fa-graduation-cap"></i>Resume (LinkedIn)
+      </a>
+      <a href="https://github.com/vig-alagappan" target="_blank">
+        <i class="fa-solid fa-robot"></i>Code (GitHub)
+      </a>
+      <a href="https://substack.com" target="_blank">
+        <i class="fas fa-pencil"></i>Essays (Substack)
+      </a>
+      <a href="https://medium.com/@vig.alagappan" target="_blank">
+        <i class="fa-solid fa-shoe-prints"></i>Fiction (Medium)
+      </a>
+      <!-- Dark mode toggle -->
+      <div class="toggle-container">
+        <button class="toggle-button" aria-label="Toggle dark mode" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      </div>
     </div>
   </div>
 
