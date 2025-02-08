@@ -4,55 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vig Alagappan</title>
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
-    /* Global body styling with a soft gradient background and centered flex layout */
+    /* Define CSS variables for theming */
+    :root {
+      --bg-color: #f5f5f5;
+      --card-bg: rgba(255, 255, 255, 0.8);
+      --text-color: #333;
+      --hover-bg: #eaeaea;
+    }
+    /* Dark mode variables */
+    body.dark {
+      --bg-color: #121212;
+      --card-bg: rgba(18, 18, 18, 0.8);
+      --text-color: #fff;
+      --hover-bg: #1e1e1e;
+    }
+
+    /* Global styles */
     body {
       margin: 0;
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      background: var(--bg-color);
       font-family: 'Roboto', sans-serif;
+      transition: background 0.3s;
     }
 
-    /* The card container for the links */
+    /* Card container styling */
     .card {
-      background: rgba(255, 255, 255, 0.8);
+      background: var(--card-bg);
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       border-radius: 10px;
       padding: 20px;
       width: 90%;
       max-width: 400px;
+      transition: background 0.3s;
     }
 
-    /* Style for each link */
+    /* Link styles */
     .card a {
-      display: block;
+      display: flex;
+      align-items: center;
       text-decoration: none;
-      color: #333;
+      color: var(--text-color);
       font-size: 1.25rem;
       padding: 15px;
       margin: 10px 0;
-      text-align: center;
       border-radius: 5px;
       transition: transform 0.2s, background 0.2s;
     }
-
-    /* Hover effect for links */
+    
+    /* Icon styling */
+    .card a i {
+      margin-right: 10px;
+    }
+    
     .card a:hover {
       transform: scale(1.02);
-      background: #f0f0f0;
+      background: var(--hover-bg);
+    }
+
+    /* Dark mode toggle button container */
+    .toggle-container {
+      text-align: center;
+      margin-top: 15px;
+    }
+    .toggle-button {
+      cursor: pointer;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      background: var(--hover-bg);
+      color: var(--text-color);
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <a href="https://www.linkedin.com/in/vignesh-alagappan/" target="_blank">Resume (LinkedIn)</a>
-    <a href="https://github.com/vig-alagappan" target="_blank">Code (GitHub)</a>
-    <a href="https://substack.com" target="_blank">Essays (Substack)</a>
-    <a href="https://medium.com/@vig.alagappan" target="_blank">Fiction (Medium)</a>
+    <a href="https://www.linkedin.com/in/vignesh-alagappan/" target="_blank">
+      <i class="fab fa-linkedin"></i>Resume (LinkedIn)
+    </a>
+    <a href="https://github.com/vig-alagappan" target="_blank">
+      <i class="fab fa-github"></i>Code (GitHub)
+    </a>
+    <a href="https://substack.com" target="_blank">
+      <i class="fas fa-newspaper"></i>Essays (Substack)
+    </a>
+    <a href="https://medium.com/@vig.alagappan" target="_blank">
+      <i class="fab fa-medium"></i>Fiction (Medium)
+    </a>
+    <!-- Dark mode toggle -->
+    <div class="toggle-container">
+      <button class="toggle-button" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
   </div>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </body>
 </html>
