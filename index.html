@@ -5,71 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vig Alagappan</title>
   <style>
-    /* Reset default margins/padding */
-    html, body {
+    /* Global body styling with a soft gradient background and centered flex layout */
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      font-family: sans-serif;
-    }
-
-    /* Create a grid with 1 column and 4 rows */
-    .grid-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: repeat(4, 1fr);
-      height: 100vh;  /* full viewport height */
-      width: 100vw;   /* full viewport width */
-    }
-
-    /* Style for each grid item */
-    .grid-item {
+      height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
-      text-decoration: none;
-      color: #fff;
-      font-size: 2.5rem;
-      font-weight: bold;
-      transition: background 0.3s;
+      align-items: center;
+      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      font-family: 'Roboto', sans-serif;
     }
 
-    /* Colors and hover effects */
-    .blue   { background: #4C72B0; }
-    .blue:hover   { background: #4466a3; }
+    /* The card container for the links */
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+    }
 
-    .green  { background: #55A868; }
-    .green:hover  { background: #4d975d; }
+    /* Style for each link */
+    .card a {
+      display: block;
+      text-decoration: none;
+      color: #333;
+      font-size: 1.25rem;
+      padding: 15px;
+      margin: 10px 0;
+      text-align: center;
+      border-radius: 5px;
+      transition: transform 0.2s, background 0.2s;
+    }
 
-    .red    { background: #C44E52; }
-    .red:hover    { background: #ad4649; }
-
-    .purple { background: #8172B2; }
-    .purple:hover { background: #7466a1; }
-
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .grid-item {
-        font-size: 1.8rem;  /* Smaller font for mobile screens */
-        padding: 15px;      /* Additional padding for touch targets */
-      }
+    /* Hover effect for links */
+    .card a:hover {
+      transform: scale(1.02);
+      background: #f0f0f0;
     }
   </style>
 </head>
 <body>
-  <div class="grid-container">
-    <a href="https://www.linkedin.com/in/vignesh-alagappan/" class="grid-item blue" target="_blank">
-      Resume (LinkedIn)
-    </a>
-    <a href="https://github.com/vig-alagappan" class="grid-item green" target="_blank">
-      Code (GitHub)
-    </a>
-    <a href="https://substack.com" class="grid-item red" target="_blank">
-      Essays (Substack)
-    </a>
-    <a href="https://medium.com/@vig.alagappan" class="grid-item purple" target="_blank">
-      Fiction (Medium)
-    </a>
+  <div class="card">
+    <a href="https://www.linkedin.com/in/vignesh-alagappan/" target="_blank">Resume (LinkedIn)</a>
+    <a href="https://github.com/vig-alagappan" target="_blank">Code (GitHub)</a>
+    <a href="https://substack.com" target="_blank">Essays (Substack)</a>
+    <a href="https://medium.com/@vig.alagappan" target="_blank">Fiction (Medium)</a>
   </div>
 </body>
 </html>
